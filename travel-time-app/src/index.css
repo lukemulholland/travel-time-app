@@ -1,0 +1,86 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f5f6fa;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.app-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 2rem 2.5rem;
+  min-width: 480px;
+  max-width: 1000px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+input, button {
+  font-size: 1rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #125ea7;
+}
+
+.destinations-list {
+  margin-bottom: 1.5rem;
+}
+
+.destination-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.destination-item span {
+  flex: 1;
+}
+
+.destination-item button {
+  margin-left: 0.5rem;
+  background: #e57373;
+  color: #fff;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  overflow-x: auto;
+  display: block;
+}
+.results-table th, .results-table td {
+  border: 1px solid #eee;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.results-table th {
+  background: #f0f0f0;
+}
