@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import MapView from './MapView';
+import 'leaflet/dist/leaflet.css';
 
 function App() {
   const [origin, setOrigin] = useState('');
@@ -114,6 +116,12 @@ function App() {
         </button>
       </form>
       {error && <div style={{ color: 'red', marginTop: 16 }}>{error}</div>}
+
+      {/* Map View: show if origin or at least one destination is present */}
+      {(origin.trim() || destinations.length > 0) && (
+        <MapView origin={origin} destinations={destinations} />
+      )}
+
       {results && (
         <table className="results-table">
           <thead>
