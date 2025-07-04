@@ -9,7 +9,7 @@ async function geocode(address, apiKey) {
   if (data && data.results && data.results.length > 0) {
     return {
       lat: data.results[0].geometry.location.lat,
-      lon: data.results[0].geometry.location.lng
+      lng: data.results[0].geometry.location.lng
     };
   }
   return null;
@@ -48,7 +48,7 @@ export default function MapView({ origin, destinations }) {
   }, [origin, destinations, apiKey]);
 
   // Center map on first marker or default location
-  const center = markers.length > 0 ? { lat: markers[0].lat, lng: markers[0].lon } : { lat: -33.8688, lng: 151.2093 }; // Sydney default
+  const center = markers.length > 0 ? { lat: markers[0].lat, lng: markers[0].lng } : { lat: -33.8688, lng: 151.2093 }; // Sydney default
 
   if (loadError) return <div>Failed to load Google Maps</div>;
   if (!isLoaded) return <div>Loading map...</div>;
@@ -63,7 +63,7 @@ export default function MapView({ origin, destinations }) {
         {markers.map((m, idx) => (
           <MarkerF
             key={idx}
-            position={{ lat: m.lat, lng: m.lon }}
+            position={{ lat: m.lat, lng: m.lng }}
             label={m.label}
           />
         ))}
