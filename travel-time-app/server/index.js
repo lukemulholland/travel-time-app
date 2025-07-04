@@ -76,6 +76,10 @@ app.post('/api/travel-times', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend listening on http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Backend listening on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
