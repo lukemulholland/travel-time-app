@@ -38,8 +38,10 @@ export default function MapView({ origin, destinations }) {
         const d = await geocode(dest.address, apiKey);
         if (d) all.push({ ...d, label: dest.label, address: dest.address });
       }
-      if (isMounted) setMarkers(all);
-      setLoading(false);
+      if (isMounted) {
+        setMarkers(all);
+        setLoading(false);
+      }
     }
     if (apiKey) fetchCoords();
     return () => { isMounted = false; };
